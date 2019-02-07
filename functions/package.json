@@ -10,9 +10,9 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
+    "corpora-project": "^0.2.0",
     "firebase-admin": "~7.0.0",
-    "firebase-functions": "^2.2.0",
-    "corpora-project": "0.2.0"
+    "firebase-functions": "^2.2.0"
   },
   "devDependencies": {
     "eslint": "^5.12.0",

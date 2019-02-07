@@ -1,12 +1,20 @@
 const functions = require('firebase-functions');
 const corpora = require('corpora-project');
+const express = require('express');
+const bodyParser = require('body-parser');
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+
+const randomQuote = express();
+randomQuote.use(bodyParser);
+
+randomQuote.get('/quote', (req, res) => {
+		
+		console.log(randomQuoted());
+		return res.send(randomQuoted());
+		
+
+	});
+	
 
 
 function random (input) {
@@ -28,20 +36,18 @@ function randomQuoted () {
 	//verb
 	//noun
 
-
-return {random(adjectives.adjs) + " " + random(nouns.nouns)
+let quote = "";
+return quote = random(adjectives) + " " + random(nouns.nouns)
 + " " +
-random(adverbs.adverbs)	+ " " +
-random(verbs.verbs) + " " +
-random(nouns.nouns) + ".";
-}
+random(adverbs)	+ " " +
+random(verbs) + " " +
+random(nouns) + ".";
+
 	
 	}
 
+module.exports = {
 
-
-
-exports.randomQuote = functions.https.onRequest((req, res) => {
-	res.send(randomQuoted());
-});
+	randomQuote
+}
 

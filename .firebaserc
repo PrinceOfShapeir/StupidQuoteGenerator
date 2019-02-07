@@ -1,5 +1,6 @@
 {
   "projects": {
-    "stagin": "random-quote-machine-45be6"
+    "stagin": "random-quote-machine-45be6",
+    "default": "random-quote-machine-45be6"
   }
 }
