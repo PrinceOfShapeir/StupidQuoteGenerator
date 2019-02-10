@@ -14,8 +14,13 @@
     ],
     "rewrites": [
       {
-        "source": "*",
-        "hosting": "index.html"
+	"source": "**",
+	"function": "frontendExport",
+	"headers": [{
+ 	"key" : "Cache-Control",
+    	"value" : "no-cache"
+  } ]
+
       }
     ]
   }

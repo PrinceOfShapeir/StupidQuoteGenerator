@@ -17,17 +17,21 @@ randomQuote.get('/quote', (req, res) => {
 	
 
 
-function random (input) {
+function randomize (input) {
+console.log(input);
 	//use full input
+if(input){
 	return input[Math.random(0,input.length-1)];
+}
+else console.log("error");
 }
 
 function randomQuoted () {
 	
-	let nouns = corpora.getCategories('words', 'nouns');
-	let adverbs = corpora.getCategories('words', 'adverbs');
-	let verbs = corpora.getCategories('words', 'verbs');
-	let adjectives = corpora.getCategories('words', 'adjectives');
+	let nouns = corpora.getFiles('words', 'nouns');
+	let adverbs = corpora.getFiles('words', 'adverbs');
+	let verbs = corpora.getFiles('words', 'verbs');
+	let adjectives = corpora.getFiles('words', 'adjectives');
 	
 	
 	//adj
@@ -37,11 +41,11 @@ function randomQuoted () {
 	//noun
 
 let quote = "";
-return quote = random(adjectives) + " " + random(nouns.nouns)
+return quote = randomize(adjectives[2]) + " " + randomize(nouns.nouns)
 + " " +
-random(adverbs)	+ " " +
-random(verbs) + " " +
-random(nouns) + ".";
+randomize(adverbs)	+ " " +
+randomize(verbs) + " " +
+randomize(nouns) + ".";
 
 	
 	}
@@ -50,4 +54,6 @@ module.exports = {
 
 	randomQuote
 }
+
+console.log(randomQuoted());
 
